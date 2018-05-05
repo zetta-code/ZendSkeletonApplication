@@ -1,6 +1,6 @@
 <?php
 /**
- * @link      http://github.com/zetta-code/skeleton-application for the canonical source repository
+ * @link      http://github.com/zetta-code/zend-skeleton-application for the canonical source repository
  * @copyright Copyright (c) 2018 Zetta Code
  */
 
