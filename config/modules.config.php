@@ -11,7 +11,20 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
+    'Zend\Cache',
+    'Zend\Session',
     'Zend\Router',
     'Zend\Validator',
+    'Zend\I18n',
+    'Zend\Mvc\I18n',
+    'Zend\Navigation',
+    'Zend\Form',
+    'Zend\Mvc\Plugin\FlashMessenger',
+    'Zend\Mvc\Plugin\Identity',
+    'DoctrineModule',
+    'DoctrineORMModule',
+    'Zetta\ZendBootstrap',
+    'Zetta\DoctrineUtil',
+    'Zetta\ZendAuthentication',
     'Application',
 ];

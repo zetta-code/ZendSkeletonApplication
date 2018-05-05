@@ -1,0 +1,491 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zetta Code\n"
+"POT-Creation-Date: 2018-05-02 12:12-0300\n"
+"PO-Revision-Date: 2018-05-02 12:09-0300\n"
+"Language-Team: Thiago S. Santos <thiagos.xsantos@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;translate\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"X-Poedit-SearchPath-0: module\n"
+"X-Poedit-SearchPath-1: config\n"
+"X-Poedit-SearchPath-2: vendor/zetta-code\n"
+"X-Poedit-SearchPathExcluded-0: data\n"
+
+#: config/autoload/navigation.global.php:11
+#: config/autoload/navigation.global.php:64
+msgid "Home"
+msgstr ""
+
+#: config/autoload/navigation.global.php:18
+#: config/autoload/navigation.global.php:73
+#: module/Application/view/application/users/add.phtml:1
+#: module/Application/view/application/users/delete.phtml:1
+#: module/Application/view/application/users/edit.phtml:1
+#: module/Application/view/application/users/index.phtml:1
+#: module/Application/view/application/users/view.phtml:1
+msgid "Users"
+msgstr ""
+
+#: config/autoload/navigation.global.php:43
+#: config/autoload/navigation.global.php:68
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:1
+#: module/Application/view/zetta/zend-authentication/account/password-change.phtml:1
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:1
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/password-change.phtml:1
+msgid "Profile"
+msgstr ""
+
+#: config/autoload/navigation.global.php:52
+msgid "Sign out"
+msgstr ""
+
+#: module/Application/src/Controller/UsersController.php:92
+msgid "Search User"
+msgstr ""
+
+#: module/Application/src/Controller/UsersController.php:141
+msgid "The user has been added."
+msgstr ""
+
+#: module/Application/src/Controller/UsersController.php:144
+#: module/Application/src/Controller/UsersController.php:240
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: module/Application/src/Controller/UsersController.php:167
+#: module/Application/src/Controller/UsersController.php:189
+#: module/Application/src/Controller/UsersController.php:263
+msgid "The user could not be found."
+msgstr ""
+
+#: module/Application/src/Controller/UsersController.php:237
+msgid "The user has been updated."
+msgstr ""
+
+#: module/Application/src/Controller/UsersController.php:272
+msgid "The user has been deleted."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AccountController.php:78
+msgid "Update"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AccountController.php:96
+msgid "Your profile has been updated."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AccountController.php:99
+msgid "Your profile could not be saved. Please, try again."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AccountController.php:141
+msgid "Your password has been changed."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AccountController.php:144
+msgid "Your current password is incorrect. Please, try again."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AccountController.php:147
+msgid "Your password could not be saved. Please, try again."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:170
+msgid "You're conected!"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:179
+msgid "Email or password is invalid."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:197
+msgid "You're disconected!"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:253
+msgid "Please, confirm your registration!"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:254
+msgid "Please, click the link to confirm your registration => "
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:258
+#, php-format
+msgid ""
+"An email has been sent to %s. Please, check your inbox and confirm your "
+"registration!"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:262
+msgid "The account could not be created. Please, try again."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:267
+msgid "Sign me up"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:305
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:412
+msgid "Token invalid or you already confirmed this link."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:315
+msgid "The email has been confirmed."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:320
+msgid "Email already verified. Please, sign in."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:361
+msgid "Recover password!"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:362
+msgid "Please, click the link to recover your password => "
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:366
+#, php-format
+msgid ""
+"An email has been sent to %s. Please, check your inbox and recover your "
+"password!"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:371
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:439
+msgid "The action could not be completed. Please, try again."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Controller/AuthController.php:435
+msgid "Your password has been changed. Please, sign in."
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:49
+#: module/Application/view/application/users/index.phtml:40
+msgid "Role"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:56
+msgid "Select"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:74
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:77
+#: module/Application/view/application/users/_view.phtml:12
+#: module/Application/view/application/users/index.phtml:37
+msgid "Name"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:87
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:90
+msgid "Username"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:100
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:103
+#: vendor/zetta-code/zend-authentication/src/Form/RecoverForm.php:34
+#: vendor/zetta-code/zend-authentication/src/Form/SigninForm.php:32
+#: vendor/zetta-code/zend-authentication/src/Form/SigninForm.php:35
+#: module/Application/view/application/users/_view.phtml:16
+msgid "Email"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:114
+#: vendor/zetta-code/zend-authentication/src/Form/SigninForm.php:46
+#: vendor/zetta-code/zend-authentication/src/Form/SigninForm.php:49
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:44
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:45
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:42
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:43
+msgid "Password"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:127
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:130
+#: module/Application/view/application/users/_form.phtml:25
+#: module/Application/view/application/users/_form.phtml:28
+#: module/Application/view/application/users/_view.phtml:4
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:52
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:56
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:50
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:54
+msgid "Avatar"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:140
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:143
+#: module/Application/view/application/users/_view.phtml:20
+msgid "Genre"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:151
+#: module/Application/view/application/users/_view.phtml:21
+msgid "Female"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:158
+msgid "Male"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:172
+#: vendor/zetta-code/zend-authentication/src/Form/Fieldset/UserFieldset.php:175
+#: module/Application/view/application/users/_view.phtml:24
+msgid "Birthday"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/PasswordChangeForm.php:35
+#: vendor/zetta-code/zend-authentication/src/Form/PasswordChangeForm.php:38
+msgid "Current Password"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/PasswordChangeForm.php:50
+#: vendor/zetta-code/zend-authentication/src/Form/PasswordChangeForm.php:53
+msgid "New Password"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/PasswordChangeForm.php:64
+msgid "Change Password"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/RecoverForm.php:48
+#: module/Application/view/zetta/zend-authentication/password-recover.phtml:2
+#: module/Application/view/zetta/zend-authentication/recover.phtml:2
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/password-recover.phtml:2
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/recover.phtml:2
+msgid "Recover password"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/SigninForm.php:62
+msgid "Remember-me"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/SigninForm.php:73
+msgid "Sign me in"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Form/UserForm.php:47
+msgid "Submit"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/InputFilter/RecoverFilter.php:33
+#: vendor/zetta-code/zend-authentication/src/InputFilter/UserFilter.php:133
+msgid "Invalid email address"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/InputFilter/UserFilter.php:115
+msgid "The username '%value%' already exists"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/InputFilter/UserFilter.php:144
+msgid "The email '%value%' already exists"
+msgstr ""
+
+#: vendor/zetta-code/zend-authentication/src/Module.php:150
+msgid "Please, sign in."
+msgstr ""
+
+#: module/Application/view/application/users/_form.phtml:30
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:60
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:58
+msgid "Choose the file"
+msgstr ""
+
+#: module/Application/view/application/users/add.phtml:8
+#: module/Application/view/application/users/index.phtml:8
+msgid "Add User"
+msgstr ""
+
+#: module/Application/view/application/users/delete.phtml:8
+msgid "Delete User"
+msgstr ""
+
+#: module/Application/view/application/users/delete.phtml:41
+msgid "Delete"
+msgstr ""
+
+#: module/Application/view/application/users/edit.phtml:8
+msgid "Edit User"
+msgstr ""
+
+#: module/Application/view/application/users/index.phtml:26
+msgid "0 user"
+msgstr ""
+
+#: module/Application/view/application/users/index.phtml:43
+msgid "Actions"
+msgstr ""
+
+#: module/Application/view/application/users/view.phtml:8
+msgid "View User"
+msgstr ""
+
+#: module/Application/view/error/403.phtml:7
+#: module/Application/view/error/404.phtml:10
+msgid "Would you like to go home?"
+msgstr ""
+
+#: module/Application/view/error/403.phtml:10
+#: module/Application/view/error/404.phtml:13
+msgid "Let's go home"
+msgstr ""
+
+#: module/Application/view/error/403.phtml:13
+#: module/Application/view/error/404.phtml:16
+#: module/Application/view/zetta/zend-authentication/recover.phtml:24
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/recover.phtml:24
+msgid "Contact Support"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:26
+msgid "The requested controller was unable to dispatch the request."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:29
+msgid "The requested middleware was unable to dispatch the request."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:32
+msgid ""
+"The requested controller could not be mapped to an existing controller class."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:35
+msgid "The requested controller was not dispatchable."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:38
+msgid "The requested URL could not be matched by routing."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:41
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:50
+msgid "Controller"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:55
+#, php-format
+msgid "(resolves to %s)"
+msgstr ""
+
+#: module/Application/view/layout/default/footer.phtml:5
+msgid "All rights reserved."
+msgstr ""
+
+#: module/Application/view/layout/default/layout.phtml:13
+#: module/Application/view/layout/default/navbar.phtml:4
+#: module/Application/view/zetta/zend-authentication/layout/default.phtml:13
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/layout/default.phtml:13
+msgid "ZF Skeleton App"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:29
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:29
+msgid "Update information"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/account/index.phtml:47
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/index.phtml:45
+msgid "Change password?"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/account/password-change.phtml:27
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/password-change.phtml:27
+msgid "Change password"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/account/password-change.phtml:46
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/password-change.phtml:46
+msgid "or"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/account/password-change.phtml:48
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/account/password-change.phtml:48
+msgid "back to profile"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/password-recover.phtml:12
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/password-recover.phtml:12
+msgid "Please reset your password."
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/password-recover.phtml:35
+#: module/Application/view/zetta/zend-authentication/recover.phtml:35
+#: module/Application/view/zetta/zend-authentication/signup.phtml:53
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/password-recover.phtml:35
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/recover.phtml:35
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signup.phtml:52
+msgid "Already have an account?"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/password-recover.phtml:37
+#: module/Application/view/zetta/zend-authentication/recover.phtml:37
+#: module/Application/view/zetta/zend-authentication/signup.phtml:55
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/password-recover.phtml:37
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/recover.phtml:37
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signup.phtml:54
+msgid "Please login"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/recover.phtml:12
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/recover.phtml:12
+msgid "Forgot your password?"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/recover.phtml:23
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/recover.phtml:23
+msgid "Don't remember your email?"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/signin.phtml:2
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signin.phtml:2
+msgid "Sign in"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/signin.phtml:12
+#: module/Application/view/zetta/zend-authentication/signup.phtml:12
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signin.phtml:12
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signup.phtml:12
+msgid "Please enter your user information."
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/signin.phtml:30
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signin.phtml:30
+msgid "Forgotten password"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/signin.phtml:42
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signin.phtml:42
+msgid "Don't have an account?"
+msgstr ""
+
+#: module/Application/view/zetta/zend-authentication/signin.phtml:44
+#: module/Application/view/zetta/zend-authentication/signup.phtml:2
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signin.phtml:44
+#: vendor/zetta-code/zend-authentication/view/zetta/zend-authentication/signup.phtml:2
+msgid "Sign up"
+msgstr ""
+
+#: vendor/zetta-code/zend-bootstrap/view/partial/avatar.phtml:96
+msgid "Available"
+msgstr ""
+
+#: vendor/zetta-code/zend-bootstrap/view/partial/avatar.phtml:99
+msgid "avatar"
+msgstr ""
+
+#: vendor/zetta-code/zend-bootstrap/view/partial/paginator.phtml:2
+msgid "Page navigation"
+msgstr ""
