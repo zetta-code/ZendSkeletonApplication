@@ -35,7 +35,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "zetta-code"
+            "zetta-code": "dev-master"
         },
         "zend-skeleton-installer": [
             {
