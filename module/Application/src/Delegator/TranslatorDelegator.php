@@ -19,7 +19,8 @@ class TranslatorDelegator implements DelegatorFactoryInterface
         $name,
         callable $callback,
         array $options = null
-    ) {
+    )
+    {
         $translator = $callback();
 
         $translator->addTranslationFilePattern(

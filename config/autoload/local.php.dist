@@ -26,5 +26,11 @@ return [
                 ]
             ]
         ]
-    ]
+    ],
+    'zend_boostrap' => [
+        'recaptcha' => [
+            'site_key' => '',
+            'secret_key' => '',
+        ],
+    ],
 ];

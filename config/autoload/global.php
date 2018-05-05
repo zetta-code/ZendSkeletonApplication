@@ -73,10 +73,6 @@ return [
     ],
     // Zetta Bootstrap
     'zend_boostrap' => [
-        'recaptcha' => [
-            'site_key' => '6LcuS1cUAAAAALnIBO4lk3WXivYt9XwaYi36K4Em',
-            'secret_key' => '6LcuS1cUAAAAAMSLlJkLwsoY6GJQzT8TwHdXv-VJ',
-        ],
         'thumbnail' => [
             'defaultPath' => './public/img/thumb-boy.svg',
             'girlPath' => './public/img/thumb-girl.svg',

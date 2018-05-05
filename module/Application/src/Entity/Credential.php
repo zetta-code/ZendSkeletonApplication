@@ -153,11 +153,12 @@ class Credential extends AbstractEntity implements CredentialInterface
      * Hash the Credential value
      * @return Credential
      */
-    public function hashValue() {
+    public function hashValue()
+    {
         $this->value = password_hash($this->value, PASSWORD_ARGON2I, [
-            'memory_cost' => 1<<17, // 128 Mb
-            'time_cost'   => 4,
-            'threads'     => 3,
+            'memory_cost' => 1 << 17, // 128 Mb
+            'time_cost' => 4,
+            'threads' => 3,
         ]);
         return $this;
     }
@@ -167,7 +168,8 @@ class Credential extends AbstractEntity implements CredentialInterface
      * @param string $value
      * @return bool
      */
-    public function verifyValue($value) {
+    public function verifyValue($value)
+    {
         return password_verify($value, $this->getValue());
     }
 

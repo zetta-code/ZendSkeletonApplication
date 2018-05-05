@@ -18,7 +18,7 @@ class TransportFactory implements FactoryInterface
     {
         $config = $container->get('config');
 
-        switch($config['mail']['options']['sender']) {
+        switch ($config['mail']['options']['sender']) {
             case 'smtp':
                 $smtpOptions = new SmtpOptions($config['mail']['transport']['options']);
                 $transport = new Smtp($smtpOptions);
