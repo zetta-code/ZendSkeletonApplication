@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Jenssegers\Date\Date;
-use Zetta\DoctrineUtil\Entity\AbstractEntity;
+use Zetta\DoctrineUtil\Entity\AbstractDeletableEntity;
 use Zetta\ZendAuthentication\Entity\UserInterface;
 
 /**
@@ -19,7 +19,7 @@ use Zetta\ZendAuthentication\Entity\UserInterface;
  * @ORM\Entity
  * @ORM\Table(name="users")
  */
-class User extends AbstractEntity implements UserInterface
+class User extends AbstractDeletableEntity implements UserInterface
 {
     const STATUS_INACTIVE = 1;
     const STATUS_ACTIVE = 2;
@@ -79,7 +79,7 @@ class User extends AbstractEntity implements UserInterface
     /**
      * @var Date
      *
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
     protected $birthday;
 
@@ -133,7 +133,7 @@ class User extends AbstractEntity implements UserInterface
     protected $credentials;
 
     /**
-     * Usuario constructor.
+     * User constructor.
      */
     public function __construct()
     {
@@ -276,7 +276,7 @@ class User extends AbstractEntity implements UserInterface
         }
 
         if ($overwrite) {
-            if (is_file($this->avatar) && strpos($this->avatar, $dir)) {
+            if ($this->avatar !== $avatar && is_file($this->avatar) && strpos($this->avatar, $dir)) {
                 unlink($this->avatar);
             }
             $this->avatar = $avatar;
@@ -390,26 +390,6 @@ class User extends AbstractEntity implements UserInterface
     }
 
     /**
-     * Get the User active
-     * @return bool
-     */
-    public function isActive()
-    {
-        return $this->active;
-    }
-
-    /**
-     * Set the User active
-     * @param bool $active
-     * @return User
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
-        return $this;
-    }
-
-    /**
      * Get the User token
      * @return string
      */
@@ -470,7 +450,7 @@ class User extends AbstractEntity implements UserInterface
      */
     public function isSignAllowed()
     {
-        return $this->status === self::STATUS_ACTIVE;
+        return $this->active;
     }
 
     /**
@@ -479,11 +459,7 @@ class User extends AbstractEntity implements UserInterface
      */
     public function setSignAllowed($signAllowed)
     {
-        if ($signAllowed) {
-            $this->status = self::STATUS_ACTIVE;
-        } else {
-            $this->status = self::STATUS_INACTIVE;
-        }
+        $this->active = $signAllowed;
         return $this;
     }
 

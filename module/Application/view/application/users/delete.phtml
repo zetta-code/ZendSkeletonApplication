@@ -12,19 +12,19 @@
                 <div class="btn-toolbar justify-content-end" role="toolbar">
                     <div class="btn-group mr-2" role="group">
                         <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'view', 'id' => $user->getId()]); ?>"
-                           data-toggle="tooltip" data-placement="bottom" title="View">
+                           data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('View'); ?>">
                             <i class="fa fa-search-plus"></i>
                         </a>
                     </div>
                     <div class="btn-group mr-2" role="group">
                         <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'edit', 'id' => $user->getId()]); ?>"
-                           data-toggle="tooltip" data-placement="bottom" title="Edit">
+                           data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Edit'); ?>">
                             <i class="fa fa-pencil"></i>
                         </a>
                     </div>
                     <div class="btn-group" role="group">
                         <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users']);?>"
-                           data-toggle="tooltip" data-placement="bottom" title="Back">
+                           data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Back'); ?>">
                             <i class="fa fa-arrow-left"></i>
                         </a>
                     </div>

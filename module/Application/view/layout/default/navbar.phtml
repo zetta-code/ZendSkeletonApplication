@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md sticky-top navbar-light bg-light top-header">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><span><img src="<?php echo $this->basePath('img/brand.svg') ?>" height="20" alt="ZF Skeleton App"/></span>&nbsp;<?php echo $this->translate('ZF Skeleton App') ?></a>
+            <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><span><img src="<?php echo $this->basePath('img/brand.svg') ?>" height="20" alt="brand"/></span>&nbsp;ZF Skeleton App</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRight" aria-controls="navbarRight" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,7 @@
                 }?>
             </span>
             <div class="navbar-right">
-                <?php echo $this->navigation('navigation')->menu()->setUlClass('nav navbar-nav float-md-right user-nav')->putPagePartial(\Zetta\ZendBootstrap\Navigation\Page\Avatar::class, 'partial/avatar')->escapeLabels(false); ?>
+                <?php echo $this->navigation('navigation')->menu()->setUlClass('nav navbar-nav float-md-right')->putPagePartial(\Zetta\ZendBootstrap\Navigation\Page\Avatar::class, 'partial/avatar')->escapeLabels(false); ?>
             </div>
         </div>
     </div>

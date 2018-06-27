@@ -65,7 +65,8 @@ class UsersController extends AbstractActionController
 
     public function indexAction()
     {
-        $qb = $this->getUserRepository()->createQueryBuilder('user');
+        $qb = $this->getUserRepository()->createQueryBuilder('user')
+            ->where('user.deletedAt IS NULL');
         $q = $this->params()->fromQuery('q');
         $container = new Container('users');
         if ($q === null) {
@@ -73,13 +74,10 @@ class UsersController extends AbstractActionController
         }
         if ($q !== null) {
             $container->q = $q;
-            $qb->andWhere('user.email LIKE :q OR user.name LIKE :q');
-            $qb->setParameter('q', "%$q%");
+            $qb->andWhere('user.email LIKE :q OR user.name LIKE :q')
+                ->setParameter('q', "%$q%");
         }
-        $qb->andWhere('user.active = :active');
-        $qb->setParameter('active', true);
         $qb->orderBy('user.name', 'ASC');
-
 
         // Paginator
         $users = new Paginator($qb);
@@ -162,10 +160,9 @@ class UsersController extends AbstractActionController
     {
         $id = $this->params()->fromRoute('id', 0);
 
-        $qb = $this->getUserRepository()->createQueryBuilder('user');
-        $qb->where('user = :user AND user.active = :active');
-        $qb->setParameter('user', $id);
-        $qb->setParameter('active', true);
+        $qb = $this->getUserRepository()->createQueryBuilder('user')
+            ->where('user = :user AND  user.deletedAt IS NULL')
+            ->setParameter('user', $id);
         /** @var User $user */
         $user = $qb->getQuery()->getOneOrNullResult();
         if ($user === null) {
@@ -185,9 +182,8 @@ class UsersController extends AbstractActionController
         $id = $this->params()->fromRoute('id', 0);
 
         $qb = $this->getUserRepository()->createQueryBuilder('user');
-        $qb->where('user = :user AND user.active = :active');
-        $qb->setParameter('user', $id);
-        $qb->setParameter('active', true);
+        $qb->where('user = :user AND  user.deletedAt IS NULL')
+            ->setParameter('user', $id);
         /** @var User $user */
         $user = $qb->getQuery()->getOneOrNullResult();
         if ($user === null) {
@@ -264,9 +260,8 @@ class UsersController extends AbstractActionController
         $id = $this->params()->fromRoute('id', 0);
 
         $qb = $this->getUserRepository()->createQueryBuilder('user');
-        $qb->where('user = :user AND user.active = :active');
+        $qb->where('user = :user AND user.deletedAt IS NULL');
         $qb->setParameter('user', $id);
-        $qb->setParameter('active', true);
         /** @var User $user */
         $user = $qb->getQuery()->getOneOrNullResult();
         if ($user === null) {
@@ -276,7 +271,7 @@ class UsersController extends AbstractActionController
 
         $request = $this->getRequest();
         if ($request->isDelete() || $request->isPost()) {
-            $user->setActive(false);
+            $user->deletedAt();
             $user->setSignAllowed(false);
             $user->generateToken();
             $this->entityManager->flush();

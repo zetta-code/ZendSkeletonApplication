@@ -7,7 +7,7 @@
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Zetta\DoctrineUtil\Entity\AbstractEntity;
+use Zetta\DoctrineUtil\Entity\AbstractDeletableEntity;
 use Zetta\ZendAuthentication\Entity\CredentialInterface;
 use Zetta\ZendAuthentication\Entity\UserInterface;
 
@@ -17,7 +17,7 @@ use Zetta\ZendAuthentication\Entity\UserInterface;
  * @ORM\Entity
  * @ORM\Table(name="credentials")
  */
-class Credential extends AbstractEntity implements CredentialInterface
+class Credential extends AbstractDeletableEntity implements CredentialInterface
 {
     const TYPE_PASSWORD = 1;
     const TYPE_FACEBOOK = 2;
@@ -55,18 +55,10 @@ class Credential extends AbstractEntity implements CredentialInterface
     protected $value;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(type="boolean")
-     */
-    protected $active;
-
-    /**
      * Constructor
      */
     public function __construct()
     {
-        $this->active = true;
     }
 
     /**

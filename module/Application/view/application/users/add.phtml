@@ -1,4 +1,4 @@
-<?php echo $this->partial('partial/title', ['title' => $this->translate('Users')]); ?>
+    <?php echo $this->partial('partial/title', ['title' => $this->translate('Users')]); ?>
 
 <div class="card">
     <div class="card-header">
@@ -12,7 +12,7 @@
                 <div class="btn-toolbar justify-content-end" role="toolbar">
                     <div class="btn-group" role="group">
                         <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users']);?>"
-                           data-toggle="tooltip" data-placement="bottom" title="Back">
+                           data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Back'); ?>">
                             <i class="fa fa-arrow-left"></i>
                         </a>
                     </div>

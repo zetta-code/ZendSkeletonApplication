@@ -12,7 +12,7 @@
                 <div class="user-display-info">
                     <div class="name"><?php echo $user->getName() ?: $user->getUsername(); ?></div>
                     <?php if ($user->getUsername() !== null): ?>
-                        <div class="nick"><span class="fa fa-user"></span> <?php echo $user->getUsername(); ?></div>
+                        <div class="nick"><i class="fa fa-user"></i> <?php echo $user->getUsername(); ?></div>
                     <?php endif; ?>
                 </div>
                 <div class="row user-display-details">

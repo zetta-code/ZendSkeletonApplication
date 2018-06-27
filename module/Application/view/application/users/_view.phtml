@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <label class="font-weight-bold"><?php echo $this->translate('Genre'); ?></label>
-            <p class="form-control-plaintext"><?php echo $this->translate($user->getGenre() === \Zetta\ZendAuthentication\Entity\Enum\Gender::FEMALE ? 'Female' : 'Male'); ?></p>
+            <p class="form-control-plaintext"><?php echo $this->translate($user->getGender() === \Zetta\ZendAuthentication\Entity\Enum\Gender::FEMALE ? 'Female' : 'Male'); ?></p>
         </div>
         <div class="form-group">
             <label class="font-weight-bold"><?php echo $this->translate('Birthday'); ?></label>

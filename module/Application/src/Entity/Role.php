@@ -7,7 +7,7 @@
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Zetta\DoctrineUtil\Entity\AbstractEntity;
+use Zetta\DoctrineUtil\Entity\AbstractDeletableEntity;
 use Zetta\ZendAuthentication\Entity\RoleInterface;
 
 /**
@@ -16,7 +16,7 @@ use Zetta\ZendAuthentication\Entity\RoleInterface;
  * @ORM\Entity
  * @ORM\Table(name="roles")
  */
-class Role extends AbstractEntity implements RoleInterface
+class Role extends AbstractDeletableEntity implements RoleInterface
 {
     const ID_ADMIN = 1;
     const ID_MEMBER = 2;
@@ -42,18 +42,10 @@ class Role extends AbstractEntity implements RoleInterface
     protected $name;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(type="boolean")
-     */
-    protected $active;
-
-    /**
      * Grupo constructor.
      */
     public function __construct()
     {
-        $this->active = true;
     }
 
     /**
@@ -93,26 +85,6 @@ class Role extends AbstractEntity implements RoleInterface
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * Get the Role active
-     * @return bool
-     */
-    public function isActive()
-    {
-        return $this->active;
-    }
-
-    /**
-     * Set the Role active
-     * @param bool $active
-     * @return Role
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
         return $this;
     }
 

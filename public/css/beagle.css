@@ -97,7 +97,7 @@ body {
 
 .user-display-info .name {
     display: block;
-    font-size: 1.385rem;
+    font-size: 1.385em;
     font-weight: 500;
     line-height: 22px
 }
@@ -113,19 +113,19 @@ body {
 
 .user-display-details .title {
     text-transform: uppercase;
-    font-size: .9231rem;
+    font-size: .9231em;
     color: #5f5f5f
 }
 
 .user-display-details .counter {
-    font-size: 1.385rem
+    font-size: 1.385em
 }
 
 .card-header {
     background: transparent;
 }
 .card-header-divider {
-    margin: 0 1.538rem 8px;
+    margin: 0 1.538rem;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 1.2307rem;
@@ -137,21 +137,10 @@ body {
     display: flex;
     width: 230px;
 }
-.top-header .navbar-nav > li.dropdown .dropdown-menu {
+.top-header li.dropdown.user-nav .dropdown-menu {
     border-radius: 3px;
     margin-top: 20px;
     line-height: 20px
-}
-.top-header .navbar-nav > li.dropdown .dropdown-menu:after, .top-header .navbar-nav > li.dropdown .dropdown-menu:before {
-    border-bottom: 8px solid #fff;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    top: -8px;
-    content: "";
-    display: inline-block;
-    left: 42px;
-    margin-left: -6px;
-    position: absolute
 }
 
 @media (min-width: 768px) {
@@ -160,65 +149,65 @@ body {
         order: 1
     }
 }
-.user-nav > li.dropdown > a {
+.user-nav a.dropdown-toggle {
     font-size: 0
 }
-.navbar-expand .user-nav > li.dropdown > a {
+.navbar-expand .user-nav a.dropdown-toggle {
     padding-left: 5px;
     padding-right: 5px
 }
 @media (max-width: 991.98px) {
-    .navbar-expand .user-nav > li.dropdown > a {
+    .navbar-expand .user-nav a.dropdown-toggle {
         padding-left: 10px
     }
 }
-.user-nav > li.dropdown > a img {
+.user-nav a.dropdown-toggle img {
     width: 32px;
     height: 32px;
     border-radius: 50%
 }
-.user-nav > li.dropdown > a .user-name {
+.user-nav a.dropdown-toggle .user-name {
     margin-left: 8px;
     display: none;
-    font-size: 1.077rem;
+    font-size: 1.077em;
     line-height: 20px;
     vertical-align: middle
 }
-.user-nav > li.dropdown > a:after {
+.user-nav a.dropdown-toggle:after {
     display: none;
-    font-size: 1.231rem;
+    font-size: 1.231em;
     margin-left: 6px
 }
 @media (max-width: 767.98px) {
-    .user-nav > li.dropdown > a:after {
+    .user-nav a.dropdown-toggle:after {
         display: inline-block
     }
 }
-.user-nav > li.dropdown .dropdown-menu {
+.user-nav > .dropdown-menu {
     width: 220px;
     padding: 0 0 7px;
     left: -178px
 }
 @media (max-width: 991.98px) {
-    .user-nav > li.dropdown .dropdown-menu {
+    .user-nav > .dropdown-menu {
         left: -173px
     }
 }
-.top-header .user-nav > li.dropdown .dropdown-menu a:active, .top-header .user-nav > li.dropdown .dropdown-menu a:focus {
+.top-header .user-nav > .dropdown-menu a:active, .top-header .user-nav > .dropdown-menu a:focus {
     background-color: transparent;
     color: #504e4e
 }
 
-.top-header .user-nav > li.dropdown .dropdown-menu a:hover {
+.top-header .user-nav > .dropdown-menu a:hover {
     background-color: #f5f5f5;
     color: #504e4e
 }
 
-.user-nav > li.dropdown .dropdown-menu a .icon {
+.user-nav > .dropdown-menu a .icon {
     vertical-align: middle;
     margin-right: 6px
 }
-.user-nav > li.dropdown .dropdown-menu .user-info {
+.user-nav > .dropdown-menu .user-info {
     background-color: #4285f4;
     color: #FFF;
     overflow: hidden;
@@ -226,24 +215,24 @@ body {
     border-radius: 2px 2px 0 0;
     margin-bottom: 7px
 }
-.user-nav > li.dropdown .dropdown-menu .user-info .user-name {
+.user-nav > .dropdown-menu .user-info .user-name {
     display: block;
-    font-size: 1.1875rem;
+    font-size: 1.1875em;
     line-height: 22px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden
 }
-.user-nav > li.dropdown .dropdown-menu .user-info .user-position {
+.user-nav > .dropdown-menu .user-info .user-position {
     display: block;
-    font-size: 0.8122rem;
+    font-size: 0.8122em;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     padding-left: 13px;
     position: relative
 }
-.user-nav > li.dropdown .dropdown-menu .user-info .user-position:after {
+.user-nav > .dropdown-menu .user-info .user-position:after {
     content: "";
     position: absolute;
     height: 7px;
@@ -255,29 +244,32 @@ body {
     background-color: transparent;
     display: block
 }
-.user-nav > li.dropdown .dropdown-menu .user-info .user-position.online:after {
+.user-nav > .dropdown-menu .user-info .user-position.online:after {
     background-color: #6cd187;
     border-color: #6cd187
 }
-.user-nav > li.dropdown .dropdown-menu .user-info .user-position.away:after {
+.user-nav > .dropdown-menu .user-info .user-position.away:after {
     background-color: #fcd050;
     border-color: #fcd050
 }
-.user-nav > li.dropdown .dropdown-menu .user-info .user-position.busy:after {
+.user-nav > .dropdown-menu .user-info .user-position.busy:after {
     background-color: #f39088;
     border-color: #f39088
 }
-.user-nav > li.dropdown .dropdown-menu .user-info .switch-status {
+.user-nav > .dropdown-menu .user-info .switch-status {
     float: right;
     margin-top: 5px
 }
-.top-header .user-nav > li.dropdown .dropdown-menu:after {
-    left: auto;
+.top-header li.dropdown.user-nav .dropdown-menu:after {
+    border-bottom: 8px solid #4285f4;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    top: -8px;
+    content: "";
+    display: inline-block;
     right: 13px;
-    border-bottom-color: #4285f4
-}
-.top-header .user-nav > li.dropdown .dropdown-menu:before {
-    display: none
+    margin-left: -6px;
+    position: absolute
 }
 
 @media (max-width: 767.98px) {
@@ -290,7 +282,7 @@ body {
 
     }
 
-    .user-nav > li.dropdown > a {
+    .user-nav a.dropdown-toggle {
         -ms-flex-align: center;
         align-items: center;
         display: -ms-flexbox;
@@ -299,16 +291,16 @@ body {
         white-space: nowrap
     }
 
-    .user-nav > li.dropdown > a:after {
+    .user-nav a.dropdown-toggle:after {
         /*color: #FFF*/
     }
 
-    .user-nav > li.dropdown > a img {
+    .user-nav a.dropdown-toggle img {
         -ms-flex: 0 0 auto;
         flex: 0 0 auto
     }
 
-    .user-nav > li.dropdown > a .user-name {
+    .user-nav a.dropdown-toggle .user-name {
         display: block;
         -ms-flex: 1 1 100%;
         flex: 1 1 100%;
@@ -316,7 +308,7 @@ body {
         text-overflow: ellipsis
     }
 
-    .top-header .user-nav > li.dropdown .dropdown-menu {
+    .top-header li.dropdown.user-nav .dropdown-menu {
         position: static;
         float: none;
         width: auto;
@@ -326,24 +318,24 @@ body {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    .user-nav > li.dropdown .dropdown-menu .user-info {
+    .user-nav > .dropdown-menu .user-info {
         display: none;
     }
 
-    .top-header .user-nav > li.dropdown .dropdown-menu:after {
+    .top-header li.dropdown.user-nav .dropdown-menu:after {
         display: none;
         content: none;
     }
 
-    .offcanvas-menu .user-nav > li.dropdown > a {
+    .offcanvas-menu .user-nav a.dropdown-toggle {
         padding-left: 0
     }
 
-    .offcanvas-menu .user-nav > li.dropdown > a img {
+    .offcanvas-menu .user-nav a.dropdown-toggle img {
         display: none
     }
 
-    .offcanvas-menu .user-nav > li.dropdown > a .user-name {
+    .offcanvas-menu .user-nav a.dropdown-toggle .user-name {
         margin-left: 0
     }
 }
@@ -458,7 +450,7 @@ body {
 
 .error .error-number {
     display: block;
-    font-size: 11.54rem;
+    font-size: 11.54em;
     font-weight: 700;
     line-height: 240px;
     margin-bottom: 30px;
@@ -472,14 +464,14 @@ body {
 
     .error .error-number {
         padding: 20px 0;
-        font-size: 6.923rem;
+        font-size: 6.923em;
         margin-bottom: 10px;
         line-height: 100px
     }
 }
 
 .error .error-description {
-    font-size: 2.308rem;
+    font-size: 2.308em;
     font-weight: 300;
     line-height: 32px;
     margin-bottom: 30px
@@ -487,12 +479,12 @@ body {
 
 @media (max-width: 767.98px) {
     .error .error-description {
-        font-size: 1.462rem
+        font-size: 1.462em
     }
 }
 
 .error .error-goback-text {
-    font-size: 1.692rem;
+    font-size: 1.692em;
     font-weight: 300;
     margin-bottom: 30px;
     margin-top: 15px
@@ -500,7 +492,7 @@ body {
 
 @media (max-width: 767.98px) {
     .error .error-goback-text {
-        font-size: 1.15rem
+        font-size: 1.15em
     }
 }
 
@@ -525,7 +517,7 @@ body {
     margin-bottom: 5px;
     font-weight: 300;
     letter-spacing: -1px;
-    font-size: 2.154rem;
+    font-size: 2.154em;
     color: #6b6b6b;
     line-height: 36px
 }
@@ -573,4 +565,11 @@ body {
         font-size: 1.846rem;
         line-height: 28px
     }
+}
+
+.pagination-info {
+    font-size: 80%;
+    font-weight: 400;
+    margin-top: .3125rem;
+    margin-bottom: .375rem;
 }

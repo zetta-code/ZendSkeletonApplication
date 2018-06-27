@@ -26,7 +26,7 @@ return [
                 'type' => \Zetta\ZendBootstrap\Navigation\Page\Avatar::class,
                 'label' => '<b class="caret"></b>',
                 'uri' => '#',
-                'ulClass' => 'dropdown-menu',
+                'liClass' => 'user-nav',
                 'resource' => 'Zetta\ZendAuthentication\Menu',
                 'privilege' => 'account',
                 'pages' => [

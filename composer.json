@@ -21,7 +21,8 @@
         "zendframework/zend-i18n-resources": "^2.5",
         "zendframework/zend-mail": "^2.9",
         "zendframework/zend-navigation": "^2.8",
-        "zetta-code/zend-authentication": "^0.0.2"
+        "zetta-code/zend-bootstrap": "dev-master as 0.0.4",
+        "zetta-code/zend-authentication": "dev-master as 0.0.2"
     },
     "autoload": {
         "psr-4": {
@@ -93,6 +94,8 @@
         "development-status": "zf-development-mode status",
         "post-create-project-cmd": ["@development-enable"],
         "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
-        "test": "phpunit"
+        "test": "phpunit",
+        "db-validate": "doctrine-module orm:validate-schema",
+        "db-update": "doctrine-module orm:schema-tool:update --force --dump-sql"
     }
 }

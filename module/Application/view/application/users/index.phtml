@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 mb-3 mb-md-0">
                 <a class="btn btn-sm btn-success" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'add']); ?>">
-                    <span class="fa fa-plus"></span> <?php echo $this->translate('Add User'); ?>
+                    <i class="fa fa-plus"></i> <?php echo $this->translate('Add User'); ?>
                 </a>
             </div>
             <div class="col-md-6">
@@ -63,11 +63,11 @@
 
                         <td class="text-center">
                             <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'edit', 'id' => $user->getId()]); ?>"
-                               data-toggle="tooltip" data-placement="bottom" title="Edit">
+                               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Edit'); ?>">
                                 <i class="fa fa-fw fa-pencil"></i>
                             </a>
                             <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'delete', 'id' => $user->getId()]); ?>"
-                               data-toggle="tooltip" data-placement="bottom" title="Delete">
+                               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Delete'); ?>">
                                 <i class="fa fa-fw fa-trash-o"></i>
                             </a>
                         </td>

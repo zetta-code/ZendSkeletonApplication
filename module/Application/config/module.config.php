@@ -7,6 +7,7 @@
 
 namespace Application;
 
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Zend\Mvc\I18n\Translator;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
@@ -70,17 +71,17 @@ return [
     ],
     'doctrine' => [
         'driver' => [
-            'application_entities' => [
-                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+            __NAMESPACE__ . '_driver' => [
+                'class' => AnnotationDriver::class,
                 'cache' => 'array',
-                'paths' => [__DIR__ . '/../src/Entity']
+                'paths' => [dirname(__DIR__) . '/src/Entity'],
             ],
             'orm_default' => [
                 'drivers' => [
-                    'Application' => 'application_entities'
-                ]
-            ]
-        ]
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver',
+                ],
+            ],
+        ],
     ],
     'service_manager' => [
         'factories' => [
