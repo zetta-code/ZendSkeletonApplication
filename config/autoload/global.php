@@ -71,11 +71,17 @@ return [
     'session_storage' => [
         'type' => SessionArrayStorage::class
     ],
+    'settings_app' => [
+        'filename' => './data/environment.php',
+    ],
     // Zetta Bootstrap
     'zend_boostrap' => [
+        'url' => [
+            'reuse_query' => true,
+        ],
         'thumbnail' => [
-            'defaultPath' => './public/img/thumb-boy.svg',
-            'girlPath' => './public/img/thumb-girl.svg',
+            'default_path' => './public/img/thumb-boy.svg',
+            'girl_path' => './public/img/thumb-girl.svg',
             'width' => 128,
             'height' => 128
         ],

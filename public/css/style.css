@@ -18,36 +18,32 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Custom page CSS
--------------------------------------------------- */
-.navbar-brand span img {
-    padding: 0 1px;
-    margin-top: -5px;
+/* aspect-ratio */
+[style*="--aspect-ratio"] > :first-child {
+    width: 100% !important;;
 }
-.footer > .container {
-    padding-top: 18px;
-    padding-bottom: 18px;
+[style*="--aspect-ratio"] > img {
+    height: auto;
 }
-.footer > .container > p {
-    margin-bottom: 6px;
+@supports (--custom:property) {
+    [style*="--aspect-ratio"] {
+        position: relative;
+    }
+    [style*="--aspect-ratio"]::before {
+        content: "";
+        display: block;
+        padding-bottom: calc(100% / (var(--aspect-ratio)));
+    }
+    [style*="--aspect-ratio"] > :first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100% !important;
+    }
 }
-.footer > .container > p:last-child {
-    margin-bottom: 0;
-}
-.alert > p,
-.alert > ul {
-    list-style: none;
-    margin-bottom: 0;
-    padding: 0;
-}
-.alert > p + p {
-    margin-top: 5px;
-}
-.btn-link.p-0 {
-    line-height: 1;
-}
+/* /aspect-ratio */
 
-    /** .toogle-password */
+/* .toogle-password */
 .toogle-password {
     position: relative;
 }
@@ -79,9 +75,9 @@ body {
 .toogle-password input[type=text] ~ .btn-toogle-password:before {
     content: "\F070"
 }
-/** /.toogle-password */
+/* /.toogle-password */
 
-/** .g-recaptcha*/
+/* .g-recaptcha*/
 .g-recaptcha {
     margin: 0 auto;display: table;
     -moz-transform:scale(0.77);
@@ -111,4 +107,58 @@ body {
         filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.1,M12=0,M21=0,M22=1.1,SizingMethod='auto expand');
     }
 }
-/** /.g-recaptcha */
+/* /.g-recaptcha */
+
+/* .btn-action */
+.btn-toolbar-fw {
+    min-width: 10.66875rem;
+}
+.btn-action {
+    color: #007bff;
+    border: none;
+    border-radius: 0;
+    padding: 0 .4rem;
+}
+.btn-action:hover {
+    color: #343a40;
+}
+.btn-action:focus {
+    color: #343a40;
+    box-shadow: none;
+}
+/* /btn-action */
+
+/* Custom page CSS
+-------------------------------------------------- */
+.navbar-brand span img {
+    padding: 0 1px;
+    margin-top: -5px;
+}
+.footer > .container {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.footer > .container > p {
+    margin-bottom: 6px;
+}
+.footer > .container > p:last-child {
+    margin-bottom: 0;
+}
+.alert > p,
+.alert > ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+.alert > p + p {
+    margin-top: 5px;
+}
+.btn-link.p-0 {
+    line-height: 1;
+}
+.custom-checkbox-without-label.custom-control {
+    padding-left: 1rem;
+}
+.table .checkbox-cell {
+    width: 1rem;
+}

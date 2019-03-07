@@ -1,7 +1,10 @@
-<nav class="navbar navbar-expand-md sticky-top navbar-light bg-light top-header">
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-light top-header" id="navbar-main">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><span><img src="<?php echo $this->basePath('img/brand.svg') ?>" height="20" alt="brand"/></span>&nbsp;ZF Skeleton App</a>
+            <a class="navbar-brand js-scroll-trigger" href="<?php echo $this->url('home') ?>">
+                <img src="<?php echo $this->basePath($this->settings('brand')) ?>" alt="brand" style="height: 20px;">
+                <span><?php echo $this->settings('name'); ?></span>
+            </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarRight" aria-controls="navbarRight" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 mb-3 mb-md-0">
                 <a class="btn btn-sm btn-success" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'add']); ?>">
-                    <i class="fa fa-plus"></i> <?php echo $this->translate('Add User'); ?>
+                    <i class="fa fa-plus"></i> <?php echo $this->translate('Add user'); ?>
                 </a>
             </div>
             <div class="col-md-6">
@@ -36,10 +36,10 @@
                     <th scope="col">
                         <?php echo $this->translate('Name'); ?>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="text-center" style="width: 9rem;">
                         <?php echo $this->translate('Role'); ?>
                     </th>
-                    <th scope="col" class="text-center" style="width: 175px">
+                    <th scope="col" class="text-center" style="width: 13.875rem;">
                         <?php echo $this->translate('Actions'); ?>
                     </th>
                 </tr>
@@ -61,15 +61,8 @@
                             <?php echo $user->getRole()->getName(); ?>
                         </td>
 
-                        <td class="text-center">
-                            <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'edit', 'id' => $user->getId()]); ?>"
-                               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Edit'); ?>">
-                                <i class="fa fa-fw fa-pencil"></i>
-                            </a>
-                            <a class="btn btn-link p-0" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'delete', 'id' => $user->getId()]); ?>"
-                               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Delete'); ?>">
-                                <i class="fa fa-fw fa-trash-o"></i>
-                            </a>
+                        <td>
+                            <?php echo $this->partial('_actions', ['user' => $user]); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

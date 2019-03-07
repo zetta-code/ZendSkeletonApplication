@@ -475,10 +475,10 @@ class User extends AbstractDeletableEntity implements UserInterface
         }
 
         if (!is_null($this->getRole())) {
-            return $this->getRole()->getName();
+            return (string) $this->getRole()->getId();
         }
 
-        return '';
+        return (string) Role::ID_GUEST;
     }
 
     /**

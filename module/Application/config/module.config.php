@@ -12,7 +12,9 @@ use Zend\Mvc\I18n\Translator;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
-use Zetta\DoctrineUtil\Controller\Service\ControllerWithEntityManagerFactory;
+use Zetta\DoctrineUtil\Factory\WithEntityManagerFactory;
+use Zetta\ZendBootstrap\Controller\Plugin\Url as UrlPlugin;
+use Zetta\ZendBootstrap\View\Helper\Url as UrlHelper;
 
 return [
     'router' => [
@@ -20,10 +22,10 @@ return [
             'home' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/',
+                    'route' => '/',
                     'defaults' => [
                         'controller' => 'Application\Controller\Index',
-                        'action'     => 'index',
+                        'action' => 'index',
                     ],
                 ],
                 'may_terminate' => true,
@@ -48,12 +50,12 @@ return [
                 ]
             ],
             'application' => [
-                'type'    => Segment::class,
+                'type' => Segment::class,
                 'options' => [
-                    'route'    => '/application[/:action]',
+                    'route' => '/application[/:action]',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
-                        'action'     => 'index',
+                        'action' => 'index',
                     ],
                 ],
             ],
@@ -62,12 +64,21 @@ return [
     'controllers' => [
         'aliases' => [
             'Application\Controller\Index' => Controller\IndexController::class,
+            'Application\Controller\Settings' => Controller\SettingsController::class,
             'Application\Controller\Users' => Controller\UsersController::class,
         ],
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
-            Controller\UsersController::class => ControllerWithEntityManagerFactory::class,
+            Controller\SettingsController::class => InvokableFactory::class,
+            Controller\UsersController::class => WithEntityManagerFactory::class,
         ],
+    ],
+
+    'controller_plugins' => [
+        'aliases' => [
+            'url' => UrlPlugin::class,
+        ],
+        'factories' => [],
     ],
     'doctrine' => [
         'driver' => [
@@ -105,20 +116,26 @@ return [
     ],
     'view_manager' => [
         'display_not_found_reason' => false,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
+        'display_exceptions' => true,
+        'doctype' => 'HTML5',
+        'not_found_template' => 'error/404',
+        'exception_template' => 'error/index',
         'template_map' => [
-            'layout/layout'           => __DIR__ . '/../view/layout/default/layout.phtml',
+            'layout/layout' => __DIR__ . '/../view/layout/default/layout.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-            'error/layout'            => __DIR__ . '/../view/error/layout.phtml',
-            'error/403'               => __DIR__ . '/../view/error/403.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'error/layout' => __DIR__ . '/../view/error/layout.phtml',
+            'error/403' => __DIR__ . '/../view/error/403.phtml',
+            'error/404' => __DIR__ . '/../view/error/404.phtml',
+            'error/index' => __DIR__ . '/../view/error/index.phtml',
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',
         ],
+    ],
+    'view_helpers' => [
+        'aliases' => [
+            'url' => UrlHelper::class,
+        ],
+        'factories' => [],
     ],
 ];

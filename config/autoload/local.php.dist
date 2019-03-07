@@ -22,15 +22,22 @@ return [
                     'user'     => 'root',
                     'password' => '',
                     'dbname'   => 'zetta',
-                    'charset'  => 'UTF8',
+                    'charset'  =>  'utf8mb4',
+                    'default_table_options' => [
+                        'charset' => 'utf8mb4',
+                        'collate' => 'utf8mb4_unicode_ci'
+                    ],
+                    'driverOptions' => [
+                        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8MB4'",
+                    ],
                 ]
             ]
         ]
     ],
     'zend_boostrap' => [
         'recaptcha' => [
-            'site_key' => '',
-            'secret_key' => '',
+            'site_key' => '6LcuS1cUAAAAALnIBO4lk3WXivYt9XwaYi36K4Em',
+            'secret_key' => '6LcuS1cUAAAAAMSLlJkLwsoY6GJQzT8TwHdXv-VJ',
         ],
     ],
 ];

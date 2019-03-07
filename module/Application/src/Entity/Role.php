@@ -18,12 +18,17 @@ use Zetta\ZendAuthentication\Entity\RoleInterface;
  */
 class Role extends AbstractDeletableEntity implements RoleInterface
 {
-    const ID_ADMIN = 1;
-    const ID_MEMBER = 2;
+    const ID_SUPER = 1;
+    const ID_ADMIN = 2;
+    const ID_MANAGER = 3;
+    const ID_MEMBER = 4;
+    const ID_GUEST = 0;
 
-    const ADMIN = 'Admin';
-    const MEMBER = 'Member';
-    const GUEST = 'Guest';
+    const SUPER   = 'Super';
+    const ADMIN   = 'Admin';
+    const MANAGER = 'Manager';
+    const MEMBER  = 'Member';
+    const GUEST   = 'Guest';
 
     /**
      * @var int
@@ -94,6 +99,6 @@ class Role extends AbstractDeletableEntity implements RoleInterface
      */
     public function getDefaultName()
     {
-        return 'Guest';
+        return (string) self::ID_GUEST;
     }
 }

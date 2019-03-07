@@ -23,6 +23,7 @@ return [
     'Zend\Mvc\Plugin\Identity',
     'DoctrineModule',
     'DoctrineORMModule',
+    'ParamsHelper',
     'Zetta\ZendBootstrap',
     'Zetta\DoctrineUtil',
     'Zetta\ZendAuthentication',

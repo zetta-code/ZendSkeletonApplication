@@ -1,0 +1,17 @@
+<!-- Javascripts -->
+<!-- Important javascript libs(put in all pages) -->
+<script type="text/javascript" src="<?php echo $this->basePath('assets/jquery/jquery-3.3.1.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo $this->basePath('assets/jquery/jquery.mask.min.js'); ?>"></script>
+<script type="text/javascript">var BASE_PATH = '<?php echo $this->basePath(); ?>';</script>
+
+<!-- Start Inline Scripts-->
+<?php echo $this->inlineScript()
+    ->prependFile($this->basePath('js/default.js'))
+    ->prependFile($this->basePath('assets/holder/holder.min.js'))
+    ->prependFile($this->basePath('assets/bootstrap-select/js/i18n/defaults-pt_BR.js'))
+    ->prependFile($this->basePath('assets/bootstrap-select/js/bootstrap-select.min.js'))
+    ->prependFile($this->basePath('assets/bootstrap/js/bootstrap.min.js'))
+    ->prependFile($this->basePath('assets/popper.js/popper.min.js'))
+    ->setAutoEscape(false);
+?>
+<!-- End Inline Scripts-->

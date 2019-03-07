@@ -96,39 +96,44 @@ return [
             'role' => Role::ID_MEMBER,
         ],
         'acl' => [
-            'defaultRole' => Role::GUEST,
+            'defaultRole' => Role::ID_GUEST,
             'roles' => [
-                Role::GUEST => null,
-                Role::MEMBER => [Role::GUEST],
-                Role::ADMIN => [Role::MEMBER],
+                Role::ID_GUEST => null,
+                Role::ID_MEMBER => [Role::ID_GUEST],
+                Role::ID_MANAGER => [Role::ID_MEMBER],
+                Role::ID_ADMIN => [Role::ID_MANAGER],
+                Role::ID_SUPER => [Role::ID_ADMIN],
             ],
             'resources' => [
                 'allow' => [
                     'Application\Controller\Index' => [
-                        '' => [Role::MEMBER],
+                        '' => [Role::ID_MEMBER],
                     ],
                     'Application\Controller\Users' => [
-                        '' => [Role::ADMIN],
+                        '' => [Role::ID_ADMIN],
+                    ],
+                    'Application\Controller\Settings' => [
+                        '' => [Role::ID_ADMIN],
                     ],
                     'Zetta\ZendAuthentication\Controller\Account' => [
-                        '' => [Role::MEMBER],
+                        '' => [Role::ID_MEMBER],
                     ],
                     'Zetta\ZendAuthentication\Controller\Auth' => [
-                        'authenticate' => [Role::GUEST],
-                        'confirm-email' => [Role::GUEST],
-                        'password-recover' => [Role::GUEST],
-                        'recover' => [Role::GUEST],
-                        'signin' => [Role::GUEST],
-                        'signout' => [Role::GUEST],
-                        'signup' => [Role::GUEST],
+                        'authenticate' => [Role::ID_GUEST],
+                        'confirm-email' => [Role::ID_GUEST],
+                        'password-recover' => [Role::ID_GUEST],
+                        'recover' => [Role::ID_GUEST],
+                        'signin' => [Role::ID_GUEST],
+                        'signout' => [Role::ID_GUEST],
+                        'signup' => [Role::ID_GUEST],
                     ],
                     'Zetta\ZendAuthentication\Menu' => [
-                        'account' => [Role::MEMBER],
+                        'account' => [Role::ID_MEMBER],
                     ]
                 ],
                 'deny' => [
                     'Zetta\ZendAuthentication\Controller\Auth' => [
-                        'signup' => [Role::MEMBER],
+                        'signup' => [Role::ID_MEMBER],
                     ],
                 ],
             ],

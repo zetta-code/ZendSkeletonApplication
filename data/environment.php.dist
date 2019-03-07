@@ -1,0 +1,50 @@
+<?php
+return [
+    'name' => 'ZF Skeleton App',
+    'shortname' => 'ZC',
+    'email' => 'zetta@code',
+    'phone' => '(86) 99999 9000',
+    'hotsite' => 'https://zetta.code',
+    'favicon' => '/img/favicon.ico',
+    'brand' => '/img/brand.svg',
+    'brand-white' => '/img/brand-white.svg',
+    'css-custom' => null,
+    'defaults' => [
+        'service' => null,
+    ],
+    'features' => [],
+    'reports' => [
+        'brand' => '/img/brand-black.svg',
+    ],
+    'services' => [
+        'gtm' => [
+            'enable' => false,
+            'id' => 'id',
+        ],
+        'iugu' => [
+            'enable' => false,
+            'account-id' => 'account-id',
+            'api-key' => 'api-key',
+        ],
+        'pagseguro' => [
+            'environment' => 'sandbox',
+            'credential' => 'account',
+            'email' => 'thiagos.xsantos@gmail.com',
+            'token' => '45B02196C37D4CD889CB885F354AEFC0',
+            'app-id' => 'app_id',
+            'app-key' => 'app_key',
+            'authorization-code' => 'authorization_code',
+            'charset' => 'UTF-8',
+            'log' => [
+                'active' => 'true',
+                'location' => './data/logs/pagseguro.log',
+            ],
+        ],
+        'payment' => [
+            'system' => 'iugu',
+            'brand' => true,
+            'method-card' => false,
+        ],
+    ],
+    'local-url' => false,
+];

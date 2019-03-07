@@ -1,0 +1,45 @@
+<div class="form-group">
+    <?php echo $this->formLabel($element); ?>
+    <div class="btn-group btn-group-toggle d-block" data-toggle="buttons">
+        <?php
+        //if ($element->getMessages() !== []) $element->setAttribute('class', 'form-control is-invalid');
+        if ($element->getAttribute('type') === 'checkbox') {
+            $value = $element->getValue();
+            $element = new \Zend\Form\Element\Radio($element->getName(), [
+                'value_options' => [
+                    [
+                        'value' => $element->getUncheckedValue(),
+                        'label' => _('No'),
+                        'attributes' => [
+                            'id' => $element->getAttribute('id') . '_unchecked',
+                            'onchange' => 'toggleYesNoButtonClass($(this).attr(\'id\'), \'btn-primary\');',
+                        ],
+                        'label_attributes' => [
+                            'class' => 'btn btn-no btn-outline-secondary',
+                        ],
+                    ],
+                    [
+                        'value' => $element->getCheckedValue(),
+                        'label' => _('Yes'),
+                        'attributes' => [
+                            'id' => $element->getAttribute('id') . '_checked',
+                            'onchange' => 'toggleYesNoButtonClass($(this).attr(\'id\'), \'btn-primary\');',
+                        ],
+                        'label_attributes' => [
+                            'class' => 'btn btn-yes btn-outline-secondary',
+                        ],
+                    ],
+                ]
+            ]);
+            $element->setValue($value);
+        }
+        echo $this->formRadio($element);
+        ?>
+    </div>
+    <?php
+    echo $this->formElementErrors()->setMessageOpenFormat('<div%sstyle="display: block;"><div>')
+        ->setMessageSeparatorString('</div><div>')
+        ->setMessageCloseString('</div></div>')
+        ->render($element, ['class' => 'invalid-feedback']);
+    ?>
+</div>

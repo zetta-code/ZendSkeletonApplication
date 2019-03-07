@@ -1,0 +1,43 @@
+<?php $action = $this->params()->fromRoute('action'); ?>
+<div class="btn-toolbar <?php echo ($action === 'index') ? 'justify-content-center flex-nowrap flex-lg-wrap' : 'justify-content-end'; ?>" role="toolbar">
+    <?php if (!in_array($action, ['view', 'index'])): ?>
+        <div class="btn-group" role="group">
+            <a class="btn btn-action" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'view', 'id' => $user->getId()]); ?>"
+               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('View'); ?>">
+                <i class="fa fa-search-plus fa-fw fa-lg"></i>
+            </a>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($action !== 'edit'): ?>
+        <div class="btn-group" role="group">
+            <a class="btn btn-action" href="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'edit', 'id' => $user->getId()]); ?>"
+               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Edit'); ?>">
+                <i class="fa fa-pencil-alt fa-fw fa-lg"></i>
+            </a>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($action !== 'delete'): ?>
+        <div class="btn-group" role="group">
+            <a class="btn btn-action post-link" href="#"
+               data-pl-title="<?php echo sprintf($this->translate('Do you want to delete the user %s?'), '<strong>' . $user->getName() . '</strong>'); ?>"
+               data-pl-close="<?php echo $this->translate('Close'); ?>"
+               data-pl-submit="<?php echo $this->translate('Delete'); ?>"
+               data-pl-submit-class="btn btn-danger"
+               data-pl-url="<?php echo $this->url('home/default', ['controller' => 'users', 'action' => 'delete', 'id' => $user->getId()]); ?>"
+               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Delete'); ?>">
+                <i class="fa fa-trash-alt fa-fw fa-lg"></i>
+            </a>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($action !== 'index'): ?>
+        <div class="btn-group" role="group">
+            <a class="btn btn-action" href="<?php echo $this->url('home/default', ['controller' => 'users']);?>"
+               data-toggle="tooltip" data-placement="bottom" title="<?php echo $this->translate('Back'); ?>">
+                <i class="fa fa-arrow-left fa-fw fa-lg"></i>
+            </a>
+        </div>
+    <?php endif; ?>
+</div>

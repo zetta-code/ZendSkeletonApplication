@@ -1,0 +1,193 @@
+<?php echo $this->partial('partial/title', ['title' => $this->translate('Settings')]); ?>
+
+<?php echo $this->form()->openTag($form->prepare()); ?>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="mb-3">
+                <h5 class="panel-title">
+                    <?php echo $this->translate('General'); ?>
+                </h5>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <?php foreach ($general as $key): ?>
+                            <?php $fieldset = $form->get('settings')->get($key); ?>
+                            <div class="col-md-6">
+                                <?php
+                                if ($fieldset->get('value') instanceof \Zend\Form\Element\Radio) {
+                                    echo $this->partial('partial/buttons-yes-no', ['element' => $fieldset->get('value')]);
+                                } else {
+                                    echo $this->zettaFormRow($fieldset->get('value'));
+                                }
+                                ?>
+                            </div>
+                        <?php endforeach; ?>
+                        <?php foreach ($defaults as $key => $value): ?>
+                            <?php $fieldset = $form->get('settings')->get($key); ?>
+                            <div class="col-md-6">
+                                <?php
+                                if ($fieldset->get('value') instanceof \Zend\Form\Element\Radio) {
+                                    echo $this->partial('partial/buttons-yes-no', ['element' => $fieldset->get('value')]);
+                                } else {
+                                    echo $this->zettaFormRow($fieldset->get('value'));
+                                }
+                                ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <?php echo $this->formLabel($form->get('favicon')); ?>
+                        <div class="text-center">
+                            <img id='<?php echo $form->get('favicon')->getName(); ?>-preview' class="img-thumbnail" src="<?php echo $this->basePath($this->settings('favicon')); ?>" style="width: 40px; height: 40px;">
+                            <div class="mt-2">
+                                <input id="<?php echo $form->get('favicon')->getName(); ?>-upload" type="file" name="<?php echo $form->get('favicon')->getName(); ?>" style="display: none">
+                                <label id="<?php echo $form->get('favicon')->getName(); ?>-label" class="btn btn-secondary" for="<?php echo $form->get('favicon')->getName(); ?>-upload"><?php echo $this->translate('Choose the file'); ?></label>
+                            </div>
+                        </div>
+                        <?php echo $this->formElementErrors($form->get('favicon')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formLabel($form->get('brand')); ?>
+                        <div class="text-center">
+                            <img id='<?php echo $form->get('brand')->getName(); ?>-preview' class="img-thumbnail img-fluid d-block mx-auto" src="<?php echo $this->basePath($this->settings('brand')); ?>" style="max-height: 100px;">
+                            <div class="mt-2">
+                                <input id="<?php echo $form->get('brand')->getName(); ?>-upload" type="file" name="<?php echo $form->get('brand')->getName(); ?>" style="display: none">
+                                <label id="<?php echo $form->get('brand')->getName(); ?>-label" class="btn btn-secondary" for="<?php echo $form->get('brand')->getName(); ?>-upload"><?php echo $this->translate('Choose the file'); ?></label>
+                            </div>
+                        </div>
+                        <?php echo $this->formElementErrors($form->get('brand')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formLabel($form->get('brand-white')); ?>
+                        <div class="text-center">
+                            <img id='<?php echo $form->get('brand-white')->getName(); ?>-preview' class="img-thumbnail img-fluid d-block mx-auto bg-secondary" src="<?php echo $this->basePath($this->settings('brand-white')); ?>" style="max-height: 100px;">
+                            <div class="mt-2">
+                                <input id="<?php echo $form->get('brand-white')->getName(); ?>-upload" type="file" name="<?php echo $form->get('brand-white')->getName(); ?>" style="display: none">
+                                <label id="<?php echo $form->get('brand-white')->getName(); ?>-label" class="btn btn-secondary" for="<?php echo $form->get('brand-white')->getName(); ?>-upload"><?php echo $this->translate('Choose the file'); ?></label>
+                            </div>
+                        </div>
+                        <?php echo $this->formElementErrors($form->get('brand-white')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->zettaFormRow($form->get('css-custom')); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="mb-3">
+                <h5 class="panel-title">
+                    <?php echo $this->translate('Features'); ?>
+                </h5>
+            </div>
+
+            <div class="row">
+                <?php foreach ($features as $key => $value): ?>
+                    <?php $fieldset = $form->get('settings')->get($key); ?>
+                    <div class="col-md-6">
+                        <?php
+                        if ($fieldset->get('value') instanceof \Zend\Form\Element\Radio) {
+                            echo $this->partial('partial/buttons-yes-no', ['element' => $fieldset->get('value')]);
+                        } else {
+                            echo $this->zettaFormRow($fieldset->get('value'));
+                        }
+                        ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="mb-3">
+                <h5 class="panel-title">
+                    <?php echo $this->translate('Payment'); ?>
+                </h5>
+            </div>
+
+            <div class="row">
+                <?php foreach ($payment as $key => $value): ?>
+                    <?php
+                    if ($key === 'campus') continue;
+
+                    $fieldset = $form->get('settings')->get('payment-' . $key);
+                    ?>
+                    <div class="col-md-6">
+                        <?php
+                        if ($fieldset->get('value') instanceof \Zend\Form\Element\Radio) {
+                            echo $this->partial('partial/buttons-yes-no', ['element' => $fieldset->get('value')]);
+                        } else {
+                            echo $this->zettaFormRow($fieldset->get('value'));
+                        }
+                        ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="mb-3">
+                <h5 class="panel-title">
+                    <?php echo $this->translate('Reports'); ?>
+                </h5>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <?php foreach ($reports as $key => $value): ?>
+                            <?php $fieldset = $form->get('settings')->get($key); ?>
+                            <div class="col-md-6">
+                                <?php
+                                if ($fieldset->get('value') instanceof \Zend\Form\Element\Radio) {
+                                    echo $this->partial('partial/buttons-yes-no', ['element' => $fieldset->get('value')]);
+                                } else {
+                                    echo $this->zettaFormRow($fieldset->get('value'));
+                                }
+                                ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <?php echo $this->formLabel($form->get('reports-brand')); ?>
+                        <div class="text-center">
+                            <img id='<?php echo $form->get('reports-brand')->getName(); ?>-preview' class="img-thumbnail img-fluid d-block mx-auto" src="<?php echo $this->basePath($this->settings('reports', 'brand') !== null ? $this->settings('reports', 'brand') : $this->settings('brand')); ?>" style="max-height: 100px;">
+                            <div class="mt-2">
+                                <input id="<?php echo $form->get('reports-brand')->getName(); ?>-upload" type="file" name="<?php echo $form->get('reports-brand')->getName(); ?>" style="display: none">
+                                <label id="<?php echo $form->get('reports-brand')->getName(); ?>-label" class="btn btn-secondary" for="<?php echo $form->get('reports-brand')->getName(); ?>-upload"><?php echo $this->translate('Choose the file'); ?></label>
+                            </div>
+                        </div>
+                        <?php echo $this->formElementErrors($form->get('reports-brand')); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <?php echo $this->formRow($form->get('submit-btn')); ?>
+    </div>
+<?php echo $this->form()->closeTag(); ?>
+
+<?php
+$this->inlineScript()->captureStart();
+echo <<<JS
+uploadImg('favicon');
+uploadImg('brand');
+uploadImg('brand-white');
+uploadImg('reports-brand');
+JS;
+$this->inlineScript()->captureEnd();
+?>
